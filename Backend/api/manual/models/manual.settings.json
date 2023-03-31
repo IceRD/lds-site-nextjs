@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manuals",
+  "info": {
+    "name": "manual",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "sort": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+	"name": "lds.ua",
+	"version": "0.1.0",
+	"description": "website lds.ua",
+	"repository": {
+		"private": true
+	},
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"server": "NODE_ENV=production pm2 start server.js --no-pmx --name=nextjs -- start",
+		"export": "next export",
+		"prettier": "prettier --write src/**/*.js",
+		"lint": "eslint --fix .",
+		"format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+		"analyze": "cross-env ANALYZE=true next build",
+		"analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+		"analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"./**/*.{js,jsx,ts,tsx}": [
+			"eslint --fix"
+		]
+	},
+	"browserslist": [
+		"last 2 version",
+		"> 1%",
+		"IE 10"
+	],
+	"dependencies": {
+		"@apollo/client": "^3.3.11",
+		"@material-ui/core": "^4.11.3",
+		"@material-ui/icons": "^4.11.2",
+		"@material-ui/lab": "^4.0.0-alpha.57",
+		"@next/bundle-analyzer": "^10.0.8",
+		"clsx": "^1.1.1",
+		"cross-env": "^7.0.3",
+		"graphql": "^15.5.0",
+		"isomorphic-unfetch": "^3.1.0",
+		"next": "^10.0.8",
+		"next-compose-plugins": "^2.2.1",
+		"next-pwa": "^5.0.6",
+		"npm": "^7.6.3",
+		"nprogress": "^0.2.0",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-masonry-css": "^1.0.14",
+		"react-slick": "^0.28.1",
+		"remark-gfm": "^1.0.0",
+		"remark-parse": "^9.0.0",
+		"remark-react": "^8.0.0",
+		"remark-unwrap-images": "^2.0.0",
+		"sass": "^1.32.8",
+		"swiper": "^6.5.0",
+		"unified": "^9.2.1"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.34",
+		"@types/nprogress": "^0.2.0",
+		"@types/react": "^17.0.3",
+		"@types/react-slick": "^0.23.4",
+		"@types/styled-components": "^5.1.8",
+		"@typescript-eslint/eslint-plugin": "^4.17.0",
+		"@typescript-eslint/parser": "^4.17.0",
+		"babel-plugin-styled-components": "^1.12.0",
+		"babel-plugin-transform-imports": "^2.0.0",
+		"eslint": "^7.22.0",
+		"eslint-config-prettier": "^7.2.0",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^3.3.1",
+		"eslint-plugin-react": "^7.22.0",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"husky": "^4.3.8",
+		"lint-staged": "^10.5.4",
+		"prettier": "^2.2.1",
+		"styled-components": "^5.2.1",
+		"typescript": "^4.2.3"
+	},
+	"license": "MIT"
+}
